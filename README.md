@@ -14,9 +14,27 @@ new artifact and update this README with the new link.
 **Scope (current):** produces review-ready drafts. No auto-publishing — the SEO
 manager reviews, routes to the medical reviewer, and publishes manually.
 
-## How to operate (SEO manager)
+## Install (one time, any Claude Code user in the org)
 
-Open this folder in the Claude Code desktop app and use:
+This repo is a Claude Code **plugin** and its own marketplace. Once it's
+pushed to the org git host, anyone installs it with:
+
+```
+/plugin marketplace add <org>/<repo>        (e.g. sghwtrade/seo-content-engine)
+/plugin install seo-content-engine@sghw-seo
+```
+
+Then restart Claude Code — the commands below work in any folder. The
+Pinecone connection installs with the plugin; each user only needs
+`PINECONE_API_KEY` in their environment and Ahrefs authenticated via `/mcp`.
+
+Working locally on this folder before it's pushed? Install from the local
+path instead: `/plugin marketplace add /Users/eiad/Desktop/SEO-CO`.
+
+Updates: merged skill PRs (see `/update-skill`) bump the plugin version;
+users get them with `/plugin update seo-content-engine`.
+
+## How to operate (SEO manager)
 
 The commands follow the same steps an SEO writer would take for a cluster —
 plan, research, approve, write, preview, review — with an approval checkpoint
@@ -39,9 +57,11 @@ Output lands in `clusters/<slug>/` — each article as `draft.md` with its
 ## Folder layout
 
 ```
+.claude-plugin/    plugin + marketplace manifests (this repo installs as a plugin)
+skills/            the pipeline commands
 config/            style guide, trusted-source allowlist, compliance checklist
-clusters/<slug>/   briefs, drafts, fact sheets, review pack (one folder per cluster)
-.claude/skills/    the pipeline commands
+.mcp.json          Pinecone MCP server (installs with the plugin)
+clusters/<slug>/   briefs, drafts, fact sheets, review pack (created per cluster run)
 ```
 
 ## Prerequisites

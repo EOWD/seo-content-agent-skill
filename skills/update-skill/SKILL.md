@@ -11,16 +11,20 @@ automatic.
 
 ## Steps
 
-1. **Read the target SKILL.md** and apply the requested change. Keep the
-   skill's structure; never remove the pipeline guardrails (writer no-web
-   rule, allowlist-only citations, gate order, Gate 4 blocking) unless the
-   user explicitly and specifically asks — and restate the risk if they do.
-2. **Show the user a short before/after summary** of what changed in the
+1. **Read the target SKILL.md** (in `skills/<skill-name>/`) and apply the
+   requested change. Keep the skill's structure; never remove the pipeline
+   guardrails (writer no-web rule, allowlist-only citations, gate order,
+   Gate 4 blocking) unless the user explicitly and specifically asks — and
+   restate the risk if they do.
+2. **Bump the plugin version** in `.claude-plugin/plugin.json` (patch bump
+   for tweaks, minor for new behavior) so installed copies pick the change
+   up via `/plugin update` after the PR merges.
+3. **Show the user a short before/after summary** of what changed in the
    skill (not the whole file — just the changed behavior).
-3. **Ship it on a branch** (never commit to main directly):
+4. **Ship it on a branch** (never commit to main directly):
    ```
    git checkout -b skill/<skill-name>-<short-change-slug>
-   git add .claude/skills/<skill-name>/
+   git add skills/<skill-name>/ .claude-plugin/plugin.json
    git commit  (message: "Update <skill-name> skill: <change summary>")
    git push -u origin <branch>
    gh pr create  (title + body summarizing the behavior change)
@@ -28,9 +32,9 @@ automatic.
    ```
    Commit messages are plain — no AI co-author attribution or generated-with
    footers.
-4. **Report** the PR link. The change goes live for everyone when the PR is
-   merged and they pull (or when the plugin version is bumped, once the
-   skills are packaged as a plugin).
+5. **Report** the PR link. The change goes live for everyone when the PR
+   merges and they run `/plugin update seo-content-engine` (or re-pull, if
+   they use the repo directly).
 
 ## Fallbacks (handle gracefully, never fail silently)
 

@@ -7,6 +7,11 @@ description: One-time setup — load the full old-blog archive into the Pinecone
 
 ## Preconditions (check first, stop with clear instructions if missing)
 
+0. `config/` exists in the working project. If not (fresh install of the
+   plugin), copy the templates — `trusted-sources.md`,
+   `compliance-checklist.md`, `style-guide.md` — from the plugin's own
+   `config/` directory (`${CLAUDE_PLUGIN_ROOT}/config/`) into the project.
+   All pipeline skills read `config/` from the working project.
 1. `PINECONE_API_KEY` is set in the environment.
 2. A source for the archive, one of:
    - an export file the user provides (WordPress XML, CSV, or a folder of files), or

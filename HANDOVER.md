@@ -37,11 +37,18 @@ SEO-CO/
 │   ├── compliance-checklist.md     WHO Code checks the human reviewer runs per article
 │   └── style-guide.md              TEMPLATE — auto-filled from the old blogs during ingest
 ├── clusters/                       output: one folder per content cluster (created on first run)
-└── .claude/skills/
-    ├── ingest-archive/             one-time: old blogs → Pinecone KB + derive style guide
+├── .claude-plugin/                 plugin + marketplace manifests — this repo installs org-wide
+│                                   via /plugin marketplace add + /plugin install (see README)
+├── .mcp.json                       Pinecone MCP config (travels with the plugin)
+└── skills/
+    ├── ingest-archive/             one-time: old blogs → Pinecone KB + tone of voice from full corpus
     ├── plan-cluster/               keywords → pillar+spoke plan → cannibalization check → briefs
-    ├── write-article/              one brief → fact sheet → draft → Gates 1–3
-    ├── run-cluster/                all briefs in parallel → link map → review pack
+    ├── research-cluster/           linked research drafts + news scan → approval → frozen fact sheets
+    ├── write-article/              clean draft → weave citations → Gates 1–3 → prompt-edit loop
+    ├── run-cluster/                all approved articles in parallel → link map → previews → review pack
+    ├── preview-article/            blog-styled HTML preview + SERP snippet preview (stable link)
+    ├── suggest-updates/            news vs archive → evidence-linked update/topic suggestions
+    ├── update-skill/               edit a skill + branch + PR + version bump in one command
     └── update-architecture/        edit + republish the architecture doc
 ```
 
