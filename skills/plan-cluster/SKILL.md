@@ -15,9 +15,18 @@ plan with one brief per article in `clusters/<slug>/briefs/`.
    say so and ask the user to paste keywords (do not silently invent volumes).
 2. **SERP scan.** For the top candidate keywords, WebSearch the live SERP:
    who ranks, what angle, what format (listicle/guide/FAQ), and visible gaps.
-3. **Cluster design.** Propose 1 pillar + up to 9 spokes. Each article gets
-   exactly one primary keyword and a distinct search intent — if two candidate
-   articles answer the same intent, merge them.
+3. **Cluster design — size is the manager's call.**
+   - If the command included a count ("/plan-cluster weaning 6"), design to
+     that size: 1 pillar + (n−1) spokes.
+   - Otherwise, derive the natural size from the data — one article per
+     distinct parent topic worth ranking for (don't pad; don't split one
+     intent into two articles) — and ask the manager ONE question before
+     fanning out: "The data supports N articles (pillar + spokes listed
+     below) — how many do you want?" This question is asked even in auto
+     mode, because it sets the cost of the run; it is the only question an
+     auto run asks.
+   Each article gets exactly one primary keyword and a distinct search
+   intent — if two candidate articles answer the same intent, merge them.
 4. **Cannibalization check.** For every proposed article, `search-records` the
    `blog-archive` Pinecone index for existing coverage. If an old post already
    targets that intent: mark the proposal as UPDATE (refresh the old post)
