@@ -16,10 +16,29 @@ Read `config/trusted-sources.md` before starting.
 1. **Coverage check** — query the `blog-archive` Pinecone index: what has the
    site already said on this topic? List overlapping claims and posts (these
    become internal-link targets and repetition-avoidance notes).
-2. **Evidence research** — search the web and PubMed for current guidance.
-   Every claim recorded MUST carry a working link to an allowlisted source
-   (`config/trusted-sources.md`), plus publication date and supporting quote.
-   The web may be read freely; only allowlisted sources may be cited.
+2. **Evidence research** — search the web and the paper literature for
+   current guidance. Every claim recorded MUST carry a working link to an
+   allowlisted source (`config/trusted-sources.md`), plus publication date
+   and supporting quote. The web may be read freely; only allowlisted
+   sources may be cited.
+
+   **Paper search — Elicit API** (preferred when `ELICIT_API_KEY` is set):
+   ```
+   curl -s -X POST https://elicit.com/api/v2/search/papers \
+     -H "Authorization: Bearer $ELICIT_API_KEY" \
+     -H "Content-Type: application/json" \
+     -d '{"query": "<natural language question>",
+          "searchMode": "semantic",
+          "maxResults": 20,
+          "filters": {"minYear": 2019,
+                      "typeTags": ["RCT", "Meta-Analysis", "Systematic Review"]}}'
+   ```
+   - Prefer meta-analyses / systematic reviews / RCTs; note `citedByCount`.
+   - Cite the PAPER (DOI link or PubMed link via `pmid`), never elicit.com.
+   - Rate limit: 100 requests/min — batch queries per article, don't spray.
+   - If `ELICIT_API_KEY` is not set, fall back to PubMed E-utilities
+     (`https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=pubmed&term=...`)
+     and say so in the research draft header.
 3. **News scan** — search for developments from the last 12 months on this
    topic: new guidelines, regulatory changes, recalls, notable studies, shifts
    in official advice. Each item: date, source link, one-line relevance note.

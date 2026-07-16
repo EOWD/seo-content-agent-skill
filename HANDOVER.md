@@ -80,6 +80,7 @@ SEO-CO/
 |---|---|
 | Web search + page fetch | ✅ Built into Claude Code — powers SERP scans and research |
 | PubMed | ✅ Free E-utilities API via built-in fetch — no key needed |
+| Elicit (paper research) | 🔑 Set `ELICIT_API_KEY` in the shell — research-cluster uses it automatically, falls back to PubMed without it |
 | Pinecone (vector KB) | ❌ Needs `PINECONE_API_KEY` (step 1 above) |
 | Ahrefs (keyword data) | ❌ Needs `/mcp` authentication (step 2 above) |
 | Firecrawl (headless browser) | ⏸ Only if the site's pages don't render on plain fetch — test during first sitemap pull |
