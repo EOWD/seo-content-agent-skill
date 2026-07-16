@@ -32,6 +32,26 @@ A separate pass maps each factual claim in the draft to its fact-sheet row and:
 - Writes `meta.md`: meta title (≤60 chars), meta description (≤155 chars),
   URL slug, image alt-text suggestions.
 
+## Stage 2.5 — SEO pass (on-page optimization)
+
+Optimize the cited draft against what actually ranks for the primary keyword:
+
+- **If `SURFER_API_KEY` is set in `.env`** (`set -a; source .env; set +a`):
+  create a Content Editor for the primary keyword via
+  `POST https://app.surferseo.com/api/v1/content_editors` (header
+  `API-KEY: $SURFER_API_KEY`), poll `GET .../content_editors/:id` until
+  guidelines are ready, and apply its term list, heading-count range, and
+  word-count range to the draft. Record the terms covered/missed in
+  `gate-log.md`. Keep the style guide authoritative on voice — Surfer guides
+  coverage, never tone.
+- **Otherwise (internal scorer)**: pull the top-10 SERP for the primary
+  keyword via Ahrefs `serp-overview`, fetch the top 5 ranking pages, extract
+  their H2/H3 topics and recurring entities/terms, and check the draft covers
+  every topic that ≥3 competitors cover (or consciously skips it — note why).
+  Also set a word-count sanity range from the competitor median.
+- Either way: never add a term by stuffing — coverage gaps are fixed by
+  adding a real, fact-sheet-backed passage, or flagged for new research.
+
 ## Stage 3 — Gates (fixed order)
 
 - **Gate 1 — fact-check**: every claim maps to a fact-sheet row; unmapped
