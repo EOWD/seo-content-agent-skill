@@ -22,9 +22,10 @@ Read `config/trusted-sources.md` before starting.
    and supporting quote. The web may be read freely; only allowlisted
    sources may be cited.
 
-   **Paper search — Elicit API** (preferred when `ELICIT_API_KEY` is set;
-   load credentials first with `set -a; source .env; set +a` — see
-   `config/kb.md` for all connection details):
+   **Paper search — run BOTH sources and merge** (load credentials first
+   with `set -a; source .env; set +a` — see `config/kb.md`):
+
+   a. **Elicit** (semantic — finds conceptually relevant work):
    ```
    curl -s -X POST https://elicit.com/api/v2/search/papers \
      -H "Authorization: Bearer $ELICIT_API_KEY" \
@@ -35,12 +36,19 @@ Read `config/trusted-sources.md` before starting.
           "filters": {"minYear": 2019,
                       "typeTags": ["RCT", "Meta-Analysis", "Systematic Review"]}}'
    ```
-   - Prefer meta-analyses / systematic reviews / RCTs; note `citedByCount`.
-   - Cite the PAPER (DOI link or PubMed link via `pmid`), never elicit.com.
-   - Rate limit: 100 requests/min — batch queries per article, don't spray.
-   - If `ELICIT_API_KEY` is not set, fall back to PubMed E-utilities
-     (`https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=pubmed&term=...`)
-     and say so in the research draft header.
+   b. **PubMed E-utilities** (keyword — guarantees exact clinical terms and
+   the newest indexed papers):
+   ```
+   https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=pubmed&term=<terms>&sort=relevance&retmax=20&retmode=json
+   then efetch/esummary the returned PMIDs for titles, dates, journals
+   ```
+   Merge the two result sets, dedupe by DOI/PMID, and prefer: meta-analyses /
+   systematic reviews / RCTs, then recency, then `citedByCount`.
+   - Cite the PAPER (DOI link or pubmed.ncbi.nlm.nih.gov/<pmid>), never
+     elicit.com or the search engine used.
+   - Elicit rate limit: 100 requests/min — batch queries per article.
+   - If `ELICIT_API_KEY` is missing, proceed with PubMed alone and note it
+     in the research draft header.
 3. **News scan** — search for developments from the last 12 months on this
    topic: new guidelines, regulatory changes, recalls, notable studies, shifts
    in official advice. Each item: date, source link, one-line relevance note.
