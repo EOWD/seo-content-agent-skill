@@ -73,7 +73,14 @@ writer ("shorten the intro", "make the tone warmer in section 2", "add the
 2. Re-run the Gate 3 claim diff automatically — an edit may never change a
    claim's meaning or drop its citation. If it would, apply the stylistic part
    and tell the user which factual part needs new approved research instead.
-3. Offer `/preview-article` to see the result rendered.
+3. Re-render the preview at its existing URL.
+4. **Fix the machine, not just the article.** If the edit reveals a
+   systematic gap — a house convention the writer missed, a recurring style
+   or structure issue, anything that would repeat on the next article —
+   ALSO apply it at the source: update the style guide or the relevant
+   skill (through the update-skill flow once the repo has a remote), bump
+   the plugin version, and tell the manager what was made permanent. A
+   correction given once should never need to be given twice.
 
 ## Output (in `clusters/<slug>/<article-slug>/`)
 
