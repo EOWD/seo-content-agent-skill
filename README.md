@@ -66,8 +66,10 @@ clusters/<slug>/   briefs, drafts, fact sheets, review pack (created per cluster
 
 ## Prerequisites
 
-- `PINECONE_API_KEY` exported in the shell (knowledge base)
-- `ELICIT_API_KEY` exported in the shell (paper research via the Elicit API;
-  research falls back to free PubMed without it)
-- Ahrefs MCP connected (keyword data; `/plan-cluster` degrades to manual keywords without it)
-- Old blog archive ingested via `/ingest-archive`
+Run `/setup-keys` once — it walks you through all of this with no terminal:
+
+- `PINECONE_API_KEY` (knowledge base — required)
+- `ELICIT_API_KEY` (paper research; falls back to free PubMed without it)
+- Ahrefs login via `/mcp` (keyword data; `/plan-cluster` asks for manual keywords without it)
+
+Then ingest the old blog archive once via `/ingest-archive`.
