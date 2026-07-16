@@ -24,16 +24,26 @@ require SEO manager sign-off.
 ## Product-fact sources (separate class — added 2026-07-16)
 
 For articles about specific products (e.g., Femibion, HiPP, Holle), product
-facts — ingredients, dosages, usage instructions, age ranges — are cited to
-the **official manufacturer product page or label**, clearly attributed
-("according to the manufacturer"). Bounds:
-- Manufacturer sources may support PRODUCT facts only — never health-benefit
-  or medical claims. "Contains 200 mg DHA" → manufacturer page is fine.
+facts — ingredients, dosages, usage instructions, age ranges — come from
+structured product data, in this order:
+
+1. **Our Shopify product metafields (primary, for products we sell).** The
+   store maintains label data as metafields — the same data the live site
+   and the AI shopping agent use. Pull via the Storefront API
+   (credentials in `.env`), product by handle, metafields namespace `tabs`:
+   `ingredients`, `nutritionfacts`, `nutritionfactsnote`,
+   `preparation_steps`, `preparation_notes`, `feedingtable`; plus
+   `info.stage` for age range. Record the retrieval date in the fact sheet.
+2. **The official manufacturer product page** — for products we don't carry,
+   or to cross-check when a metafield looks stale or is missing. Attribute
+   as "according to the manufacturer".
+
+Bounds (apply to both):
+- Product sources support PRODUCT facts only — never health-benefit or
+  medical claims. "Contains 200 mg DHA" → metafield/manufacturer is fine.
   "DHA supports infant brain development" → allowlist/peer-reviewed only.
-- Verify against the LIVE product page at research time (labels change);
-  record the access date in the fact sheet.
-- Retailer listings (including our own store pages) are not citation sources
-  for label facts — go to the manufacturer.
+- If metafield and manufacturer label disagree, flag it to the SEO manager —
+  that's a store-data bug worth fixing, not a judgment call for the writer.
 
 ## Citation rules
 
