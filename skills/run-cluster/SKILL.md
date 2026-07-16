@@ -12,6 +12,12 @@ no publishing.
 
 ## Steps
 
+0. **Run dashboard.** Publish `clusters/<slug>/dashboard.html` as an artifact
+   (load the artifact-design skill first) showing every stage with
+   done/running/pending/gate states, and REPUBLISH it to the same URL as each
+   stage completes — the SEO manager watches the run from that one link.
+   Include: keyword KPIs, per-stage status + timestamps, and the two human
+   gates marked clearly.
 1. **Verify readiness.** Every article folder needs an approved
    `fact-sheet.md`. Articles without one are listed and skipped — offer to
    run `/research-cluster` for them; never draft from unapproved research.
