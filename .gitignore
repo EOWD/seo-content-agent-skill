@@ -1,3 +1,4 @@
 clusters/
 suggestions/
 .DS_Store
+.env
