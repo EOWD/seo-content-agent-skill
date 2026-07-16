@@ -22,6 +22,9 @@ Spawn a writer agent that:
 - Writes readable prose first — no inline citations yet. Follows the style
   guide, outline, and word range; places the brief's internal-link targets
   as natural inline links.
+- Includes a **Table of Contents** (numbered anchor links to every H2 except
+  References) placed after the intro/definition block — a house convention
+  present across the corpus; never skip it.
 
 ## Stage 2 — Weave citations
 
