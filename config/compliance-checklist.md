@@ -17,6 +17,19 @@ it per target market.
 - [ ] No implied endorsement by health authorities ("WHO-approved", "pediatrician recommended") unless literally true and citable
 - [ ] Tone is informational, not promotional, when a specific product category is named
 
+## Supplement articles (vitamins, minerals — added 2026-07-16)
+
+- [ ] No disease claims ("prevents postpartum depression", "treats anemia") —
+  only qualified structure/function wording ("supports", "contributes to")
+  consistent with what the cited evidence actually shows
+- [ ] Dosage/ingredient facts match the manufacturer's current label, with
+  access date recorded in the fact sheet
+- [ ] Standard supplement disclaimer present where required by target market
+  (e.g., US: FDA "not intended to diagnose, treat, cure, or prevent" framing)
+- [ ] "Consult your doctor before taking supplements while pregnant or
+  breastfeeding" hedge present
+- [ ] No implication that supplements replace a balanced diet or medical care
+
 ## Site-level (checked once, re-verified quarterly)
 
 - [ ] Author bio pages with real credentials exist and are linked

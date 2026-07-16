@@ -21,6 +21,20 @@ never be the citation for a claim.
 Extend this table per target market (national health authorities) — additions
 require SEO manager sign-off.
 
+## Product-fact sources (separate class — added 2026-07-16)
+
+For articles about specific products (e.g., Femibion, HiPP, Holle), product
+facts — ingredients, dosages, usage instructions, age ranges — are cited to
+the **official manufacturer product page or label**, clearly attributed
+("according to the manufacturer"). Bounds:
+- Manufacturer sources may support PRODUCT facts only — never health-benefit
+  or medical claims. "Contains 200 mg DHA" → manufacturer page is fine.
+  "DHA supports infant brain development" → allowlist/peer-reviewed only.
+- Verify against the LIVE product page at research time (labels change);
+  record the access date in the fact sheet.
+- Retailer listings (including our own store pages) are not citation sources
+  for label facts — go to the manufacturer.
+
 ## Citation rules
 
 1. One claim per fact-sheet line, with: source URL, publication date, and the
