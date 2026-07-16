@@ -70,7 +70,7 @@ Read `config/trusted-sources.md` before starting.
    ## Open questions / conflicts between sources
    ```
 
-## Approval checkpoint (blocking)
+## Approval checkpoint (mode-aware — see config/pipeline-settings.md)
 
 6. **Present the research for approval — as an artifact.** Publish
    `clusters/<slug>/research-review.html` (load the artifact-design skill
@@ -79,10 +79,11 @@ Read `config/trusted-sources.md` before starting.
    supporting evidence, and any conflicts between sources highlighted. This
    is built for an expert reviewer — make links spot-checkable and quotes
    verbatim. Give the manager the link; they approve, edit, or reject per
-   article IN CHAT (the page is the review surface, the reply is the
-   approval). Apply their edits and republish the page marked APPROVED with
-   the date.
-7. On approval, freeze the claims table of each `research-draft.md` into
+   article IN CHAT. In **auto** mode (default), publish the page as an
+   audit trail, freeze the fact sheets, and proceed straight to drafting —
+   the manager can interrupt anytime. In **checkpoint** mode, wait for their
+   reply before freezing. Republish the page marked with the outcome.
+7. When approved (or immediately, in auto mode), freeze the claims table of each `research-draft.md` into
    `fact-sheet.md` in the same folder — this is the writing contract that
    Gates 1 and 3 enforce. Unapproved articles do not proceed to drafting.
 

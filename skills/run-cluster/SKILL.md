@@ -21,8 +21,9 @@ no publishing.
 1. **Verify readiness.** Every article folder needs an approved
    `fact-sheet.md`. Articles without one are listed and skipped — offer to
    run `/research-cluster` for them; never draft from unapproved research.
-2. **Confirm scope.** Show the user which articles will run (default: all
-   ready ones) and fan out.
+2. **Confirm scope.** In auto mode (default — see
+   `config/pipeline-settings.md`), state which articles are running and fan
+   out immediately. In checkpoint mode, wait for the manager's go.
 3. **Draft in parallel.** Run the `write-article` flow per article
    (Stages 1–3: clean draft → weave citations → gates). Pillar first if link
    sequencing matters, otherwise all parallel.
