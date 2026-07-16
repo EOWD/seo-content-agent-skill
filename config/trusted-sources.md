@@ -15,6 +15,7 @@ never be the citation for a claim.
 | UK National Health Service | nhs.uk |
 | European Food Safety Authority | efsa.europa.eu |
 | US Food & Drug Administration | fda.gov |
+| American Psychological Association (psychology/mental-health topics) | apa.org |
 | Peer-reviewed papers via Elicit API or PubMed | (cite the paper's DOI or PubMed link — never elicit.com itself) |
 
 Extend this table per target market (national health authorities) — additions

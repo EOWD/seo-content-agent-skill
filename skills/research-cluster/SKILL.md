@@ -47,6 +47,10 @@ Read `config/trusted-sources.md` before starting.
    - Cite the PAPER (DOI link or pubmed.ncbi.nlm.nih.gov/<pmid>), never
      elicit.com or the search engine used.
    - Elicit rate limit: 100 requests/min — batch queries per article.
+   - Gotchas (learned 2026-07-16): Elicit's WAF 403-blocks the default
+     Python-urllib user agent — send a curl-like `User-Agent` header and
+     space calls ~3s apart. PubMed E-utilities 429s on rapid calls — sleep
+     ≥1s between esearch and esummary.
    - If `ELICIT_API_KEY` is missing, proceed with PubMed alone and note it
      in the research draft header.
 3. **News scan** — search for developments from the last 12 months on this
