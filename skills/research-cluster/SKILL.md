@@ -72,9 +72,16 @@ Read `config/trusted-sources.md` before starting.
 
 ## Approval checkpoint (blocking)
 
-6. Present the SEO manager a per-article summary: claim count, strongest news
-   items, suggested angles, and any source conflicts. They approve, edit, or
-   reject per article. Apply their edits.
+6. **Present the research for approval — as an artifact.** Publish
+   `clusters/<slug>/research-review.html` (load the artifact-design skill
+   first): per article, the full claims table with every source link
+   clickable, the news scan with dates, the suggested angles with their
+   supporting evidence, and any conflicts between sources highlighted. This
+   is built for an expert reviewer — make links spot-checkable and quotes
+   verbatim. Give the manager the link; they approve, edit, or reject per
+   article IN CHAT (the page is the review surface, the reply is the
+   approval). Apply their edits and republish the page marked APPROVED with
+   the date.
 7. On approval, freeze the claims table of each `research-draft.md` into
    `fact-sheet.md` in the same folder — this is the writing contract that
    Gates 1 and 3 enforce. Unapproved articles do not proceed to drafting.
