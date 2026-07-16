@@ -32,11 +32,20 @@ plan with one brief per article in `clusters/<slug>/briefs/`.
    targets that intent: mark the proposal as UPDATE (refresh the old post)
    instead of NEW, or drop it. Show what was found.
 5. **Present the plan for approval — as an artifact.** Publish
-   `clusters/<slug>/plan-review.html` (load the artifact-design skill first):
-   the full plan table (article, primary keyword, intent, volume/difficulty,
-   NEW vs UPDATE, overlapping old post), the SERP findings per keyword, and
-   the cannibalization evidence — competitor titles and existing-post links
-   clickable so the manager can spot-check everything from the page. Give
+   `clusters/<slug>/plan-review.html` (load the artifact-design skill first)
+   containing, in this order:
+   - **Keyword research table** — EVERY candidate keyword evaluated (not
+     just the chosen ones): volume, difficulty, CPC, traffic potential,
+     parent topic, intent, and SERP features (flag AI Overview presence).
+     Mark each row chosen-as-primary / folded-into-<article> / discarded,
+     with a one-word reason. Sortable columns if simple to do; at minimum
+     sorted by volume. This is the manager's raw material — never show
+     conclusions without the data behind them.
+   - The plan table (article, primary keyword, intent, volume/difficulty,
+     NEW vs UPDATE, overlapping old post).
+   - SERP findings per keyword, and the cannibalization evidence —
+     competitor titles and existing-post links clickable so the manager can
+     spot-check everything from the page. Give
    them the link, then wait for their approval in chat (artifacts can't send
    clicks back — the page is the review surface, the reply is the approval).
    Apply their edits and republish the page so it records the approved state.
