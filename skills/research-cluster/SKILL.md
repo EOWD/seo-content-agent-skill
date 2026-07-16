@@ -22,7 +22,9 @@ Read `config/trusted-sources.md` before starting.
    and supporting quote. The web may be read freely; only allowlisted
    sources may be cited.
 
-   **Paper search — Elicit API** (preferred when `ELICIT_API_KEY` is set):
+   **Paper search — Elicit API** (preferred when `ELICIT_API_KEY` is set;
+   load credentials first with `set -a; source .env; set +a` — see
+   `config/kb.md` for all connection details):
    ```
    curl -s -X POST https://elicit.com/api/v2/search/papers \
      -H "Authorization: Bearer $ELICIT_API_KEY" \
