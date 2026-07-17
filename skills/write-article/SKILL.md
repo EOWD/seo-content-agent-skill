@@ -30,8 +30,25 @@ Spawn a writer agent that:
 
 A separate pass maps each factual claim in the draft to its fact-sheet row and:
 - inserts the inline source link at the claim (linking style per style guide),
-- builds a **References** section at the end: every cited source with title,
-  publisher, date, and link — ready for the writer/reviewer to spot-check.
+- builds a **References** section at the end with title, publisher, date, and
+  link — ready for the writer/reviewer to spot-check.
+- **Reference cap — at most 3 references per article** (manager policy,
+  2026-07-17). Keep the 3 most authoritative, most load-bearing sources
+  (prefer primary health authorities — WHO / AAP / NIH / EFSA / NHS / Cochrane —
+  over weaker ones). First **consolidate**: where several claims can legitimately
+  rest on one of the 3 kept sources, cite that source, so the cap costs as little
+  coverage as possible. Only claims that still depend on a 4th+ source have their
+  citation dropped from the article.
+  - ⚠️ **Compliance tradeoff (read before shipping YMYL):** this cap overrides
+    the "every claim carries its own citation" rule in
+    `config/trusted-sources.md` *for the visible article*. Every claim still maps
+    to a fully-sourced row in `fact-sheet.md` (the internal contract Gates 1 & 3
+    enforce), so nothing is fabricated — but the rendered article may show medical
+    claims with no inline citation. List every claim whose citation was dropped
+    under an **"Uncited after 3-ref cap"** heading in `gate-log.md`, so the Gate 4
+    medical reviewer verifies each against the fact sheet before publishing. For
+    non-medical articles the cap is cosmetic; for YMYL articles it shifts
+    citation-verification onto the human Gate 4.
 - Writes `meta.md`: meta title (≤60 chars), meta description (≤155 chars),
   URL slug, image alt-text suggestions.
 

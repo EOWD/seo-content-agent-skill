@@ -1,6 +1,6 @@
 {
   "name": "seo-content-engine",
-  "version": "0.8.6",
+  "version": "0.8.7",
   "description": "YMYL-safe SEO content pipeline for the infant nutrition program: plan cluster \u2192 approved linked research \u2192 parallel drafts \u2192 quality gates \u2192 HTML previews \u2192 medical review pack. Drafts only \u2014 no auto-publishing.",
   "author": {
     "name": "SGHW Trade"
