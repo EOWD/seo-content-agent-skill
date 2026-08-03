@@ -12,7 +12,12 @@ description: One-time setup — load the full old-blog archive into the Pinecone
    `compliance-checklist.md`, `style-guide.md` — from the plugin's own
    `config/` directory (`${CLAUDE_PLUGIN_ROOT}/config/`) into the project.
    All pipeline skills read `config/` from the working project.
-1. `PINECONE_API_KEY` is set in the environment.
+1. `PINECONE_API_KEY` is set in the environment — a **write-capable** key
+   (maintainer's). Also: the project `.claude/settings.json` denies Pinecone
+   MCP write tools by default (KB protection — see `config/kb.md`). The
+   maintainer must temporarily remove that deny block before ingesting and
+   restore it afterwards. If the deny rules are active, stop and tell the
+   user this — do not work around them another way.
 2. A source for the archive, one of:
    - an export file the user provides (WordPress XML, CSV, or a folder of files), or
    - the site URL — discover posts via `/sitemap.xml` and fetch each one

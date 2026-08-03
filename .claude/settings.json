@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "deny": [
+      "mcp__pinecone__upsert-records",
+      "mcp__pinecone__create-index-for-model",
+      "mcp__pinecone__create-index",
+      "mcp__pinecone__delete-index"
+    ]
+  }
+}

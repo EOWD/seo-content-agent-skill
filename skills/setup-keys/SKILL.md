@@ -16,6 +16,16 @@ plugin files.
 2. **For each missing key, tell the user where to get it**, then ask them to
    paste it:
    - Pinecone (required): https://app.pinecone.io → API Keys → Create.
+     **Operators (SEO manager) get their own key, never a shared one** — a
+     per-person key can be revoked without breaking anyone else. If the plan
+     tier offers custom key roles, create it READ-ONLY (Control plane:
+     Read-only, Data plane: Read-only); on tiers without roles, the
+     repo-committed `.claude/settings.json` deny rules block all Pinecone
+     MCP write tools instead (do not remove them on operator machines).
+     The pipeline only searches the KB, so everything works except
+     `/ingest-archive` (maintainer-only). Never put the main project key on
+     an operator's machine — the same Pinecone project holds the live
+     shopping agent's indexes (`blog`, `blog-openai`, `products*`).
    - Elicit (optional — paper research; PubMed fallback works without it):
      https://elicit.com/settings → API. Requires a Pro plan or above.
      Key format starts with `elk_live_`.
