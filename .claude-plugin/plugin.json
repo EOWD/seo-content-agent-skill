@@ -1,0 +1,8 @@
+{
+  "name": "seo-content-engine",
+  "version": "0.10.3",
+  "description": "YMYL-safe SEO content pipeline for the infant nutrition program: plan cluster → approved linked research → parallel drafts → quality gates → HTML previews → medical review pack. Drafts only — no auto-publishing.",
+  "author": {
+    "name": "SGHW Trade"
+  }
+}

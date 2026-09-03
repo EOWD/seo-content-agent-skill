@@ -1,0 +1,13 @@
+{
+  "name": "sghw-seo",
+  "owner": {
+    "name": "SGHW Trade"
+  },
+  "plugins": [
+    {
+      "name": "seo-content-engine",
+      "source": "./",
+      "description": "SEO content pipeline: /plan-cluster, /research-cluster, /run-cluster, /write-article, /preview-article, /suggest-updates, /ingest-archive, plus /update-skill for shipping skill improvements as PRs."
+    }
+  ]
+}

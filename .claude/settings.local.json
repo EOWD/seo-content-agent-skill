@@ -1,0 +1,34 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(mkdir -p /Users/utkudemirhan/Desktop/seo-content-agent-skill-main/.claude/skills)",
+      "Bash(cp -R /Users/utkudemirhan/Desktop/seo-content-agent-skill-main/skills/* /Users/utkudemirhan/Desktop/seo-content-agent-skill-main/.claude/skills/)",
+      "Bash(python3 *)",
+      "Bash(python3 -c ' *)",
+      "Bash(chmod 600 /tmp/.ek)",
+      "Read(//tmp/**)",
+      "Bash(curl -s -o /tmp/.elicit_resp -w 'HTTP_STATUS:%{http_code}\\\\n' -X POST https://elicit.com/api/v2/search/papers -H 'Authorization: Bearer __CMDSUB_OUTPUT__' -H 'Content-Type: application/json' -H 'User-Agent: curl/8.4.0' -d '{\"query\": \"infant formula safety\", \"searchMode\": \"semantic\", \"maxResults\": 1}')",
+      "Bash(rm -f /tmp/.ek)",
+      "mcp__claude_ai_Ahrefs__doc",
+      "mcp__claude_ai_Ahrefs__subscription-info-limits-and-usage",
+      "Bash(claude mcp *)",
+      "Bash(curl -s https://api.github.com/repos/nvm-sh/nvm/releases/latest)",
+      "Bash(curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.6/install.sh)",
+      "Bash(bash)",
+      "Bash(zsh -c 'which npx; which node')",
+      "Bash(env -i HOME=/Users/utkudemirhan SHELL=/bin/zsh /bin/zsh -c 'which npx')",
+      "Bash(env -i HOME=\"$HOME\" SHELL=/bin/zsh PATH=\"/Users/utkudemirhan/.local/bin:/usr/local/bin:/usr/bin:/bin\" /bin/zsh -c 'which npx && npx -v')",
+      "mcp__pinecone__list-indexes",
+      "mcp__pinecone__describe-index-stats",
+      "Bash(xargs -I{} echo {})",
+      "mcp__8c484014-221e-43db-9006-a65b4e437e6d__serp-overview",
+      "mcp__8c484014-221e-43db-9006-a65b4e437e6d__keywords-explorer-overview",
+      "mcp__8c484014-221e-43db-9006-a65b4e437e6d__keywords-explorer-volume-history",
+      "mcp__8c484014-221e-43db-9006-a65b4e437e6d__keywords-explorer-volume-by-country",
+      "mcp__8c484014-221e-43db-9006-a65b4e437e6d__render-time-series-chart"
+    ]
+  },
+  "enabledMcpjsonServers": [
+    "pinecone"
+  ]
+}
