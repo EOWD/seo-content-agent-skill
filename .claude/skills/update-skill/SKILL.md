@@ -11,6 +11,18 @@ automatic.
 
 ## Steps
 
+0. **Critical-change soft check.** If the requested change touches a
+   non-negotiable guardrail (writer no-web rule, allowlist-only citations,
+   product-fact sourcing, gate order, Gate 4 blocking — the list in
+   HANDOVER.md §5) or otherwise changes what the pipeline is allowed to
+   publish without human review, treat it as critical: ask the user to
+   confirm with the passphrase in `.env`'s `SKILL_UPDATE_PASSPHRASE` before
+   applying anything. This is a deliberate-confirmation step, not a real
+   access control — it exists so a critical guardrail change is never applied
+   from an offhand or ambiguous instruction. If `SKILL_UPDATE_PASSPHRASE` is
+   unset in `.env`, there's nothing to confirm against — skip the check and
+   proceed. Non-critical changes (wording, thresholds, formatting, new
+   non-guardrail behavior) never need this — don't ask for it reflexively.
 1. **Read the target SKILL.md** (in `skills/<skill-name>/`) and apply the
    requested change. Keep the skill's structure; never remove the pipeline
    guardrails (writer no-web rule, allowlist-only citations, gate order,

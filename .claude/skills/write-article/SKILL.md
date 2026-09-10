@@ -33,6 +33,22 @@ Spawn a writer agent that:
 - Includes a **Table of Contents** (numbered anchor links to every H2 except
   References) placed after the intro/definition block — a house convention
   present across the corpus; never skip it.
+- **Marks a visual placeholder for every visual idea in the brief** (comparison
+  table, infographic) at its outline position, in the form
+  `[VISUAL: <concept> — alt: "<keyword>"]`. Use the brief's specified alt-text
+  keyword; if the brief didn't give one, pick the most relevant unused
+  primary/secondary keyword from the fact sheet's keyword list. Never drop a
+  visual concept the brief called for — placeholder it even if it isn't built
+  yet. **Max 3 visuals per article** (the brief is already capped at 3 —
+  never add extra ones beyond what it lists).
+- **Marks a CTA placeholder under each H2 or product mention that has a real,
+  currently-carried product or collection behind it**, in the form
+  `[CTA: Shop <Product/Collection Name> →](/products/<handle>)` or
+  `/collections/<handle>`. Pull the handle from the Shopify catalog — never
+  invent a CTA target that isn't a real, currently-carried product/collection.
+  Skip the CTA where no relevant product exists rather than forcing one.
+- **FAQ items use H3** for each question (the "FAQ" section header itself is
+  the H2) — never demote an FAQ question below H3 or promote it to H2.
 
 ## Stage 2 — Weave citations
 
@@ -42,8 +58,8 @@ A separate pass maps each factual claim in the draft to its fact-sheet row and:
   in the rendered HTML/preview) so the reader never leaves the page outright.
 - builds a **References** section at the end with title, publisher, date, and
   link — ready for the writer/reviewer to spot-check.
-- **Reference cap — at most 3 references per article** (manager policy,
-  2026-07-17). Keep the 3 most authoritative, most load-bearing sources
+- **Reference cap — 2–3 references per article, never more than 3** (manager
+  policy, 2026-07-17). Keep the most authoritative, most load-bearing sources
   (prefer primary health authorities — WHO / AAP / NIH / EFSA / NHS / Cochrane —
   over weaker ones). First **consolidate**: where several claims can legitimately
   rest on one of the 3 kept sources, cite that source, so the cap costs as little
@@ -59,9 +75,14 @@ A separate pass maps each factual claim in the draft to its fact-sheet row and:
     medical reviewer verifies each against the fact sheet before publishing. For
     non-medical articles the cap is cosmetic; for YMYL articles it shifts
     citation-verification onto the human Gate 4.
-- Writes `meta.md`: meta title (≤60 chars), meta description (≤155 chars),
-  URL slug, image alt-text suggestions (each naturally incorporating the
-  article's primary or a secondary keyword — never stuffed).
+- Writes `meta.md`: meta title (≤70 characters / ~600px, must include the
+  primary keyword), meta description (≤155 characters / ~960px, must include
+  the primary keyword and end with a CTA per the style guide's pattern), a
+  clean URL slug (lowercase, hyphenated, no stop-word bloat, no query
+  parameters, kept well short of the 200+-character danger zone — short and
+  keyword-relevant, not a restatement of the whole title), and image/visual
+  alt-text suggestions (each naturally incorporating the article's primary or
+  a secondary keyword — never stuffed).
 
 ## Stage 2.5 — SEO pass (on-page optimization)
 
@@ -89,6 +110,21 @@ Optimize the cited draft against what actually ranks for the primary keyword:
 
 ## Stage 3 — Gates (fixed order)
 
+- **Gate 0 — structure & format check**: mechanical, no fact-sheet needed.
+  - Every visual idea in the brief has a matching `[VISUAL: ...]` placeholder
+    in the draft — none dropped, none added beyond the brief's list, and no
+    more than 3 total.
+  - Every `[CTA: ...]` placeholder's `/products/<handle>` or
+    `/collections/<handle>` resolves to a real, currently-carried Shopify
+    catalog entry; drop any that doesn't (never invent one to fill the slot).
+  - Every FAQ question is H3 under the "FAQ" H2 — none promoted or demoted.
+  - `meta.md` title ≤70 characters and includes the primary keyword;
+    description ≤155 characters, includes the primary keyword, and ends with
+    a CTA per the style guide; slug is lowercase/hyphenated with no query
+    parameters or stop-word bloat.
+  - Fix violations directly (they're mechanical) rather than sending the
+    whole draft back to the writer; only loop back if a fix requires new
+    brief input (e.g. no real product exists for a required CTA).
 - **Gate 1 — fact-check**: every claim maps to a fact-sheet row; unmapped
   claim → back to the writer (max 2 rounds, then flag).
 - **Gate 2 — humanizer**: style-only pass (use the humanizer skill); claims,

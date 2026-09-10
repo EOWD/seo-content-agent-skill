@@ -13,13 +13,18 @@ Input: an article folder containing `draft.md` and `meta.md`.
    artifact), then build a single self-contained HTML page containing:
    - **SERP snippet preview** at the top: the meta title, URL slug, and meta
      description rendered the way Google shows them, with character-count
-     warnings if title >60 or description >155 chars.
+     warnings if title >70 chars (~600px) or description >155 chars (~960px),
+     and a flag if the URL slug looks long/unclean (query parameters, stop-word
+     bloat, or approaching 200+ characters).
    - **The article** rendered as a blog post: title, byline placeholder
-     ("Medically reviewed by —, pending"), reading time, headings, inline
-     links (external links marked `target="_blank" rel="noopener"` with a
-     small new-tab indicator, so the new-tab rule and first-link-internal
-     rule are visually spot-checkable), image placeholders with their alt
-     text visible, and the References section.
+     ("Medically reviewed by —, pending"), reading time, headings (FAQ
+     questions rendered as H3), inline links (external links marked
+     `target="_blank" rel="noopener"` with a small new-tab indicator, so the
+     new-tab rule and first-link-internal rule are visually spot-checkable),
+     `[VISUAL: ...]` placeholders rendered as a labeled image-placeholder box
+     with its alt text visible, `[CTA: ...]` placeholders rendered as an
+     actual styled button linking to the product/collection, and the
+     References section.
    - Style it to approximate the live site's typography if known (check
      `config/style-guide.md` for site look notes); otherwise a clean,
      readable blog layout. Both light and dark theme.

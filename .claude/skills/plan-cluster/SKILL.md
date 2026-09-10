@@ -48,6 +48,13 @@ name/handle**. Output: an approved cluster plan with one brief per article in
   the full candidate list; it does not narrow it. Narrowing happens once, in
   step 5, when the manager picks which secondary keywords each article
   actually uses.
+- **Never proceed without explicit keyword selections.** Writing briefs
+  (step 6) requires the manager's actual secondary-keyword selections for
+  each article — not an assumption, not a default of "use everything," and
+  not treating research/plan approval alone as sufficient. If selections
+  haven't been given yet, say so plainly and ask for them again; never claim
+  to be "ready" or imply the pipeline can move forward while this is still
+  outstanding.
 - **Article assignment is the manager's call too.** When a keyword could
   plausibly serve more than one article (e.g. a brand-specific term that
   could anchor its own guide but also fits naturally in an overview
@@ -155,9 +162,11 @@ name/handle**. Output: an approved cluster plan with one brief per article in
    - working title + angle (why this beats what currently ranks)
    - outline (H2s, with H3/H4 sub-points where the topic has natural
      sub-structure — e.g. comparison specs, step lists), target word range
-   - visual ideas: any comparison-table or infographic concepts worth
-     building (e.g. brand comparison table, dosage/age chart), each paired
-     with an alt-text keyword to target
+   - visual ideas: comparison-table or infographic concepts worth building
+     (e.g. brand comparison table, dosage/age chart), each paired with an
+     alt-text keyword to target — **cap at 3 per article**; pick the 3 most
+     load-bearing for the reader's decision, not every concept that comes to
+     mind
    - internal-link targets: 2–4 existing posts found via the KB, plus planned
      sibling articles in this cluster
    - notes from the SERP scan (format expectations, questions to answer)
