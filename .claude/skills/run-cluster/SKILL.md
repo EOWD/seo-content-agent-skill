@@ -31,11 +31,17 @@ no publishing.
    never blocks the others.
 5. **Internal-link map** (cluster sync point — only when all drafts exist).
    Build `link-map.md`: spoke ↔ pillar links, links into existing posts
-   (targets via the `blog-archive` KB), and suggested anchor edits to OLD
-   posts that should link to the new articles (applied manually at publish).
-   Follow `write-article`'s anchor-text and relative-URL rules for every link
-   added here too. Update every `draft.md` to match the map, then re-run its
-   Gate 3 claim diff.
+   (targets via the `blog-archive` KB), and an **Existing content
+   opportunities** section — for every new article, the existing posts that
+   could link to it (roll up each article's `inbound-links.md`, prioritized
+   by topical relevance and by where a link would sit naturally), written as
+   suggested anchor edits to be applied manually at publish. Follow
+   `write-article`'s link rules for every link added here too: one link per
+   target page per article (drop a map link if the draft already links that
+   target), collection page over individual product pages, only
+   contextually relevant and natural links, relative URLs, varied anchor
+   text. Update every `draft.md` to match the map, then re-run its Gate 3
+   claim diff.
 6. **Previews.** Render each article via the preview-article skill and build
    `preview-index.html` at the cluster root linking all previews + the link
    map. Give the user the index link.

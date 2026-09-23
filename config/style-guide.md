@@ -33,13 +33,13 @@
   - Every article acknowledges breastfeeding superiority. When relevant, cite that "the World Health Organization (WHO) recommends exclusive breastfeeding for the first six months," then normalize formula/combination feeding without judgment ("over half of parents turn to formula… and that's perfectly okay").
   - Never denigrate or discourage breastfeeding; never claim any formula is equal or superior to breast milk. Present formula as a valid, well-supported choice, not a replacement upgrade.
   - Health/nutrition claims are qualified ("may help", "is designed to", "often") and paired with a professional-consultation hedge — avoid guarantees of medical outcomes.
-  - **Standard closing footer (append verbatim to every article — present on ~96% of the corpus):**
+  - **Standard closing footer (append verbatim to every article — present on ~96% of the corpus). Exact format, fixed 2026-09-23: two paragraphs, this wording and punctuation, no heading, last block before References; never paraphrased or merged:**
 
-    > Please be aware that this information is based on general trends in babies, and it is not medical advice. Your doctor should be your first source of information and advice when considering any changes to your child's formula and when choosing your child's formula. Always consult your pediatrician before making any decisions about your child's diet or if you notice any changes in your child.
+    > Please be aware that this information is based on general trends in babies, and it is not medical advice. Your doctor should be your first source of information and advice when considering any changes to your child’s formula and when choosing your child’s formula. Always consult your pediatrician before making any decisions about your child’s diet or if you notice any changes in your child.
     >
     > Breastfeeding is the best nutrition for your baby because breast milk provides your child with all the essential nutrients they need for growth and development. Please consult your pediatrician if your child requires supplemental feeding.
 
-- **Meta title/description patterns:** SEO titles ~56 characters, often with a hook or brand suffix ("… | Organic's Best") or a curiosity angle ("The Epic Face-Off: HiPP vs Holle"). Meta descriptions ~150 characters and almost always end with a CTA imperative and an exclamation mark ("Read more now!", "Learn now!", "Click to read more!") — ~87% carry a CTA, ~81% end in "!". Match this: benefit + CTA + "!".
+- **Meta title/description patterns:** SEO titles ~56 characters, often with a hook or a curiosity angle ("The Epic Face-Off: HiPP vs Holle"). The brand suffix "… | Organic's Best" appears in the corpus but is **not added by default** to new articles — only when the manager asks for it. Hard limits: title **≤600px**, description **≤960px** as Google renders them (~70 / ~155 characters as proxies). Meta descriptions ~150 characters and almost always end with a CTA imperative and an exclamation mark ("Read more now!", "Learn now!", "Click to read more!") — ~87% carry a CTA, ~81% end in "!". Match this: benefit + CTA + "!".
 
 ## Tone exemplars
 

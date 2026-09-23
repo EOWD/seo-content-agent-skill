@@ -24,10 +24,28 @@ Spawn a writer agent that:
   as natural inline links, following these rules:
   - **The first link in the article body must be internal** — never send a
     reader offsite before they've gone deeper into the site.
+  - **One link per target page.** Never link to the same target page more
+    than once in an article — one unique text link to each target is
+    sufficient. Later mentions of that page stay plain text.
+  - **Only relevant, natural links.** No unnecessary or repetitive internal
+    links: every link is contextually relevant and reads naturally in its
+    sentence. If a sentence has to be built around a link, leave it out.
+  - **Collection page over individual product pages.** When a collection
+    page exists for the keyword/topic being discussed, link to the
+    collection, not to the individual products in it (e.g. link the HiPP
+    Stage 1 collection, not HiPP UK Stage 1 and HiPP Dutch Stage 1
+    separately). Confirm the collection in the Shopify catalog — never guess
+    a handle.
+  - **Stage/type articles also link the individual products.** When the
+    article specifically discusses a formula stage or formula type (e.g.
+    Stage 1 formulas), link to all relevant, currently-carried individual
+    product pages for that stage/type where they fit naturally — alongside
+    the collection link, one link each, no repeats.
   - **Anchor text varies** — sometimes the full target-article title,
     sometimes a short keyword phrase; never generic "click here"/"read more."
-  - **Internal links are relative** (e.g. `/blogs/organicsbestclub/<slug>`),
-    never the full `organicsbestshop.com` domain.
+  - **Internal links are relative** (e.g. `/blogs/organicsbestclub/<slug>`,
+    `/collections/<handle>`, `/products/<handle>`), never the full
+    `organicsbestshop.com` domain.
   - **All links, internal and external, are clean** — no tracking or query
     parameters.
 - Includes a **Table of Contents** (numbered anchor links to every H2 except
@@ -43,12 +61,37 @@ Spawn a writer agent that:
   never add extra ones beyond what it lists).
 - **Marks a CTA placeholder under each H2 or product mention that has a real,
   currently-carried product or collection behind it**, in the form
-  `[CTA: Shop <Product/Collection Name> →](/products/<handle>)` or
-  `/collections/<handle>`. Pull the handle from the Shopify catalog — never
-  invent a CTA target that isn't a real, currently-carried product/collection.
-  Skip the CTA where no relevant product exists rather than forcing one.
+  `[CTA: Shop <Collection/Product Name> →](/collections/<handle>)` or
+  `/products/<handle>`. **The CTA links to the relevant collection page
+  whenever an appropriate collection exists**; an individual product page is
+  the CTA target only when no collection covers it. Pull the handle from the
+  Shopify catalog — never invent a CTA target that isn't a real,
+  currently-carried collection/product. Skip the CTA where no relevant
+  collection or product exists rather than forcing one. The one-link-per-
+  target rule applies to CTAs too: one CTA per target page per article.
 - **FAQ items use H3** for each question (the "FAQ" section header itself is
   the H2) — never demote an FAQ question below H3 or promote it to H2.
+- **Every heading earns its place.** Do not create H2s or H3s that are
+  irrelevant, redundant, or forced in solely to include a keyword. Every
+  heading must have a clear purpose and must logically introduce the content
+  that follows it. Do not use "Is Stage 1 Formula Organic?" as an H2 unless
+  the article specifically addresses whether Stage 1 formula is organic; do
+  not place "Goat Milk Stage 1" as an H3 under "Stage 1 Formula Brands"
+  unless that section specifically discusses goat milk Stage 1 brands.
+  Related keywords that don't represent distinct, useful sections go into
+  the prose of the section they belong to — not into separate headings.
+  Follow the brief's outline, but if an outlined heading fails this test,
+  fold it into the nearest relevant section and note the change in
+  `gate-log.md`.
+- **Closes with the standard disclaimer, verbatim.** The last block of the
+  article body (after the conclusion/FAQ, before References) is the
+  two-paragraph "Standard closing footer" from `config/style-guide.md`
+  ("Please be aware that this information is based on general trends in
+  babies…" + "Breastfeeding is the best nutrition for your baby…"), copied
+  exactly — same two paragraphs, same wording and punctuation, no heading,
+  not listed in the Table of Contents. Never paraphrase, shorten, merge, or
+  restyle it, and never let an in-body hedge stand in for it. It is fixed
+  boilerplate: the humanizer pass and prompt edits leave it untouched.
 
 ## Stage 2 — Weave citations
 
@@ -75,14 +118,24 @@ A separate pass maps each factual claim in the draft to its fact-sheet row and:
     medical reviewer verifies each against the fact sheet before publishing. For
     non-medical articles the cap is cosmetic; for YMYL articles it shifts
     citation-verification onto the human Gate 4.
-- Writes `meta.md`: meta title (≤70 characters / ~600px, must include the
-  primary keyword), meta description (≤155 characters / ~960px, must include
+- Writes `meta.md`: meta title (**must not exceed 600px** as Google renders
+  it — ≤70 characters is the working proxy, go shorter when the title uses
+  many wide characters — must include the primary keyword, and **never
+  append "| Organic's Best" or any brand suffix automatically**; add one only
+  when the manager asks for it on that article), meta description (**must
+  not exceed 960px** — ≤155 characters is the working proxy — must include
   the primary keyword and end with a CTA per the style guide's pattern), a
   clean URL slug (lowercase, hyphenated, no stop-word bloat, no query
   parameters, kept well short of the 200+-character danger zone — short and
   keyword-relevant, not a restatement of the whole title), and image/visual
   alt-text suggestions (each naturally incorporating the article's primary or
   a secondary keyword — never stuffed).
+- Writes `inbound-links.md` — **existing content opportunities**: existing
+  articles (found via the `blog-archive` KB) that could link *to* this new
+  article, prioritized by topical relevance and by where an added internal
+  link would read naturally. For each: the old post's URL, the section or
+  passage where the link belongs, and suggested anchor text. Suggestions
+  only — old posts are edited manually at publish.
 
 ## Stage 2.5 — SEO pass (on-page optimization)
 
@@ -107,6 +160,9 @@ Optimize the cited draft against what actually ranks for the primary keyword:
   set a word-count sanity range from the competitor median.
 - Either way: never add a term by stuffing — coverage gaps are fixed by
   adding a real, fact-sheet-backed passage, or flagged for new research.
+  Heading-count ranges and competitor headings never justify a forced
+  heading: a covered topic gets its own H2/H3 only when it is a distinct,
+  useful section (Stage 1 heading rule); otherwise it lives in prose.
 
 ## Stage 3 — Gates (fixed order)
 
@@ -152,6 +208,7 @@ writer ("shorten the intro", "make the tone warmer in section 2", "add the
 
 ## Output (in `clusters/<slug>/<article-slug>/`)
 
-`draft.md` (with inline links + References), `meta.md`, `gate-log.md`.
+`draft.md` (with inline links, standard closing disclaimer, References),
+`meta.md`, `inbound-links.md`, `gate-log.md`.
 Ready for Gate 4 human medical + compliance review
 (`config/compliance-checklist.md`). Never call it publishable before that.

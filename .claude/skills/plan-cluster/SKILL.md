@@ -172,9 +172,13 @@ name/handle**. Output: an approved cluster plan with one brief per article in
    - notes from the SERP scan (format expectations, questions to answer)
    - keyword-usage note: selected secondary keywords — including ones the
      site already ranks for elsewhere — are used naturally in subheadings
-     (H2/H3) and as anchor text linking to the relevant product/collection
-     page. Don't force or overuse them; the primary keyword stays the
-     article's main focus, secondaries appear only where they fit naturally.
+     (H2/H3) and as anchor text linking to the relevant collection page (or
+     product page when no collection covers it). Don't force or overuse
+     them; the primary keyword stays the article's main focus, secondaries
+     appear only where they fit naturally. A secondary keyword gets its own
+     H2/H3 in the outline only when it represents a distinct, useful section
+     of content — never a heading created just to hold the keyword; otherwise
+     it is used in prose.
 
 ## Output
 

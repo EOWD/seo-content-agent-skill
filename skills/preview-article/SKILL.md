@@ -12,10 +12,13 @@ Input: an article folder containing `draft.md` and `meta.md`.
 1. **Load the artifact-design skill first** (required before publishing any
    artifact), then build a single self-contained HTML page containing:
    - **SERP snippet preview** at the top: the meta title, URL slug, and meta
-     description rendered the way Google shows them, with character-count
-     warnings if title >70 chars (~600px) or description >155 chars (~960px),
-     and a flag if the URL slug looks long/unclean (query parameters, stop-word
-     bloat, or approaching 200+ characters).
+     description rendered the way Google shows them, with width warnings if
+     the title exceeds 600px or the description exceeds 960px (estimate with
+     Google's SERP fonts — Arial 20px title, 14px description — not just
+     character counts; ~70 / ~155 characters are the proxies), a note if the
+     title carries a "| Organic's Best" suffix (not added by default — confirm
+     the manager asked for it), and a flag if the URL slug looks long/unclean
+     (query parameters, stop-word bloat, or approaching 200+ characters).
    - **The article** rendered as a blog post: title, byline placeholder
      ("Medically reviewed by —, pending"), reading time, headings (FAQ
      questions rendered as H3), inline links (external links marked
